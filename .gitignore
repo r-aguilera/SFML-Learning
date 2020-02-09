@@ -1,0 +1,5 @@
+# Ignore any executables (bin/), object files (build/) or libs compiled by the project (lib/)
+
+bin*
+build*
+lib*
