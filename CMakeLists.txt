@@ -17,6 +17,10 @@ set(my_source_files
 set(my_header_files
 )
 
+set(CMAKE_ARCHIVE_OUTPUT_DIRECTORY ${CMAKE_SOURCE_DIR}/lib)
+set(CMAKE_LIBRARY_OUTPUT_DIRECTORY ${CMAKE_SOURCE_DIR}/lib)
+set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_SOURCE_DIR}/bin)
+
 # Set option to use the static SFML libraries (static libraries are used by default)
 set(SFML_STATIC_LIBRARIES TRUE CACHE BOOL "Use SFML static libraries")
 
@@ -35,7 +39,7 @@ if(SFML_INSTALLATION_DIR)
 	# Find SFML
 	find_package(SFML 2.5 COMPONENTS audio graphics network system window REQUIRED)
 	
-	add_executable(HelloWorld HelloWorld.cpp)
+	add_executable(HelloWorld src/HelloWorld.cpp)
 	target_link_libraries(HelloWorld sfml-graphics sfml-audio sfml-network sfml-window sfml-system)
 else()
 	message("Set SFML_INSTALLATION_DIR and press Configurate again")

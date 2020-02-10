@@ -75,7 +75,7 @@ Game::Game() :
 	mIsMovingUp(false),
 	mIsMovingDown(false) {
 	
-	mTextures.load(Textures::Spaceship, "ScratchCat.png");
+	mTextures.load(Textures::Spaceship, "../../media/ScratchCat.png");
 
 	mSprite.setTexture(mTextures.get(Textures::Spaceship));
 	mSprite.setPosition(200.f, 200.f);
