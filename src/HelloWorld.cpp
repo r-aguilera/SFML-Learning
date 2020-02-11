@@ -16,8 +16,14 @@ template<typename Resource, typename Identifier>
 class ResourceHolder {
 public:
 	void load(Identifier, const std::string&);
+
+	template <typename Parameter>
+		void load(Identifier, const std::string&, const Parameter&);
+
 	Resource& get(Identifier);
-	const Resource& get(Identifier) const; 
+
+	const Resource& get(Identifier) const;
+
 private:
 	std::map<Identifier, std::unique_ptr<Resource>> mResourceMap;
 };
@@ -30,6 +36,18 @@ void ResourceHolder<Resource, Identifier>::load(Identifier id, const std::string
 
 	auto inserted = mResourceMap.insert(std::make_pair(id, std::move(resource)));
 	
+	assert(inserted.second);
+}
+
+template<typename Resource, typename Identifier>
+template<typename Parameter>
+void ResourceHolder<Resource, Identifier>::load(Identifier id, const std::string& filename, const Parameter& secondPar) {
+	std::unique_ptr<Resource> resource(new Resource());
+	if (!resource->loadFromFile(filename, secondPar))
+		throw std::runtime_error("ResourceHolder::load failed to load " + filename);
+
+	auto inserted = mResourceMap.insert(std::make_pair(id, std::move(resource)));
+
 	assert(inserted.second);
 }
 
@@ -76,9 +94,9 @@ Game::Game() :
 	mIsMovingDown(false) {
 	
 	mTextures.load(Textures::Spaceship, "../../media/ScratchCat.png");
-
 	mSprite.setTexture(mTextures.get(Textures::Spaceship));
 	mSprite.setPosition(200.f, 200.f);
+	mSprite.setScale(0.5, 0.5);
 }
 
 void Game::run() {
