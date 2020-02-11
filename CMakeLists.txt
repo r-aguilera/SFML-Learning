@@ -13,8 +13,13 @@ project(SFML-Learning)
 
 # List your files here
 set(my_source_files
+	src/Game.cpp
 )
 set(my_header_files
+	include/constexprVars.hpp
+	include/Game.hpp
+	include/identifiers.hpp
+	include/ResourceHolder.hpp
 )
 
 set(CMAKE_ARCHIVE_OUTPUT_DIRECTORY ${CMAKE_SOURCE_DIR}/lib)
@@ -39,8 +44,14 @@ if(SFML_INSTALLATION_DIR)
 	# Find SFML
 	find_package(SFML 2.5 COMPONENTS audio graphics network system window REQUIRED)
 	
-	add_executable(HelloWorld src/HelloWorld.cpp)
-	target_link_libraries(HelloWorld sfml-graphics sfml-audio sfml-network sfml-window sfml-system)
+	add_executable(HelloWorld src/main.cpp ${my_source_files})
+	target_include_directories(HelloWorld PUBLIC "${CMAKE_SOURCE_DIR}/include")
+	target_link_libraries(HelloWorld
+		sfml-graphics
+		sfml-audio
+		sfml-network
+		sfml-window
+		sfml-system)
 else()
 	message("Set SFML_INSTALLATION_DIR and press Configurate again")
 endif()
