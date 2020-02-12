@@ -1,3 +1,4 @@
+#pragma once
 #ifndef _RESOURCEHOLDER_
 #define _RESOURCEHOLDER_
 

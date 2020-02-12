@@ -1,3 +1,4 @@
+#pragma once
 #ifndef _GAME_
 #define _GAME_
 

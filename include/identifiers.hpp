@@ -1,3 +1,4 @@
+#pragma once
 #ifndef _IDENTIFIERS_
 #define _IDENTIFIERS_
 

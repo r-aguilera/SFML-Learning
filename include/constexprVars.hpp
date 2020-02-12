@@ -1,3 +1,4 @@
+#pragma once
 #ifndef _CONSTEXPRVARS_
 #define _CONSTEXPRVARS_
 
