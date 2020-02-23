@@ -15,6 +15,7 @@ project(SFML-Learning)
 set(my_source_files
 	src/Game.cpp
 	src/Entity.cpp
+	src/Spaceship.cpp
 )
 set(my_header_files
 	include/constexprVars.hpp
@@ -22,6 +23,7 @@ set(my_header_files
 	include/Entity.hpp
 	include/identifiers.hpp
 	include/ResourceHolder.hpp
+	include/Spaceship.hpp
 )
 
 set(CMAKE_ARCHIVE_OUTPUT_DIRECTORY ${CMAKE_SOURCE_DIR}/lib)
