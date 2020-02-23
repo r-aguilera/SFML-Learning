@@ -14,10 +14,12 @@ project(SFML-Learning)
 # List your files here
 set(my_source_files
 	src/Game.cpp
+	src/Entity.cpp
 )
 set(my_header_files
 	include/constexprVars.hpp
 	include/Game.hpp
+	include/Entity.hpp
 	include/identifiers.hpp
 	include/ResourceHolder.hpp
 )
