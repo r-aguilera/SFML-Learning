@@ -15,6 +15,7 @@ project(SFML-Learning)
 set(my_source_files
 	src/Game.cpp
 	src/Entity.cpp
+	src/SceneNode.cpp
 	src/Spaceship.cpp
 )
 set(my_header_files
@@ -23,6 +24,7 @@ set(my_header_files
 	include/Entity.hpp
 	include/identifiers.hpp
 	include/ResourceHolder.hpp
+	include/SceneNode.hpp
 	include/Spaceship.hpp
 )
 
