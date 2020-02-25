@@ -4,6 +4,12 @@
 
 #include <SFML\Graphics.hpp>
 
+enum Layer {
+	Space,
+	Ships,
+	UI
+};
+
 class SceneNode : public sf::Transformable, public sf::Drawable, private sf::NonCopyable {
 public:
 	typedef std::unique_ptr<SceneNode> Ptr;

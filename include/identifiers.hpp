@@ -3,7 +3,10 @@
 #define _IDENTIFIERS_
 
 namespace Textures {
-	enum ID { Landscape = 1, Missile = 2, Spaceship = 3 };
+	enum ID {
+		Player1, Player2, Player3,
+		Enemy1, Enemy2, Enemy3
+	};
 }
 
 #endif // _IDENTIFIERS_

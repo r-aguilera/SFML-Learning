@@ -3,6 +3,7 @@
 #define _RESOURCEHOLDER_
 
 #include <SFML\Graphics.hpp>
+#include "identifiers.hpp"
 #include <assert.h>
 
 template<typename Resource, typename Identifier>
@@ -57,5 +58,7 @@ const Resource& ResourceHolder<Resource, Identifier>::get(Identifier id) const {
 	assert(found != mResourceMap.end());
 	return *found->second;
 }
+
+typedef ResourceHolder<sf::Texture, Textures::ID> TextureHolder;
 
 #endif // _RESOURCEHOLDER_
