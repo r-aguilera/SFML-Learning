@@ -5,13 +5,14 @@
 #include "Entity.hpp"
 
 class Spaceship : Entity {
-public:
-	explicit Spaceship(mType);
+
 public:
 	enum Type {
 		Player1,	Player2,	Player3,
 		Enemy1,		Enemy2,		Enemy3,
 	};
+public:
+	explicit Spaceship(Type);
 private:
 	Type mType;
 };
