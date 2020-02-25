@@ -12,7 +12,7 @@ class Spaceship : Entity {
 public:
 	enum Type {
 		Player1,	Player2,	Player3,
-		Enemy1,		Enemy2,		Enemy3,
+		Enemy1,		Enemy2,		Enemy3
 	};
 public:
 	explicit Spaceship(Type, const TextureHolder&);
